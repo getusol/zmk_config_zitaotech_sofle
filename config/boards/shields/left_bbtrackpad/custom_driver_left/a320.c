@@ -374,8 +374,8 @@ static void a320_work_cb(struct k_work *work) {
 
         float slow_mult = slow_key_pressed ? SLOW_KEY_MULTIPLIER : 1.0f;
 
-        float fx = dx * 3 / 4 * a320_factor * slow_mult;
-        float fy = dy * 3 / 4 * a320_factor * slow_mult;
+        float fx = dx * 5 / 8 * a320_factor * slow_mult;   // 定制：原 3/4，调低约 17%
+        float fy = dy * 5 / 8 * a320_factor * slow_mult;   // 定制：原 3/4
 
         input_report_rel(dev, INPUT_REL_X, (int)fx, false, K_NO_WAIT);
         input_report_rel(dev, INPUT_REL_Y, (int)fy, true, K_NO_WAIT);
